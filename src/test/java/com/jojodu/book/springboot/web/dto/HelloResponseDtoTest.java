@@ -1,7 +1,9 @@
-package com.jojodu.book.springboot.dto;
+package com.jojodu.book.springboot.web.dto;
 import com.jojodu.book.springboot.web.dto.HelloResponseDto;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class HelloResponseDtoTest {
     @Test
@@ -14,7 +16,7 @@ public class HelloResponseDtoTest {
         HelloResponseDto dto = new HelloResponseDto(name, amount);
 
         //then
-        Assertions.assertThat(dto.getName()).isEqualTo(name);
-        Assertions.assertThat(dto.getAmount()).isEqualTo(amount);
+        assertThat(dto.getName()).isEqualTo(name);
+        assertThat(dto.getAmount()).isEqualTo(amount);
     }
 }
