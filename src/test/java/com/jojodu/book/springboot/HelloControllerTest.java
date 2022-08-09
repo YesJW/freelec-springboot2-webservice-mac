@@ -13,11 +13,11 @@ import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@ExtendWith(SpringExtension.class)
-@WebMvcTest(controllers = HelloController.class)
+@ExtendWith(SpringExtension.class) //SpringExtention이라는 스프링 실행자 사용, 스프링부트 테스트와 junit사이에 연결자 역할
+@WebMvcTest(controllers = HelloController.class) //웹에 집중할 수 있는 어노테이션, @Controller를 사용가능
 public class HelloControllerTest {
-    @Autowired
-    private MockMvc mvc;
+    @Autowired //스프링이 관리하는 Bean을 주입받음
+    private MockMvc mvc; //웹 API를 테스트할 때 사용
 
     @Test
     public void hello가_리턴된다() throws Exception{
