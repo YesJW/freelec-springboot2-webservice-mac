@@ -5,24 +5,25 @@ import com.jojodu.book.springboot.domain.posts.Posts;
 import com.jojodu.book.springboot.web.dto.PostsSaveRequestDto;
 import com.jojodu.book.springboot.web.dto.PostsUpdateRequestDto;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //랜덤 포트로 실행
 public class PostApiControllerTest {
 
@@ -35,7 +36,7 @@ public class PostApiControllerTest {
     @Autowired
     private PostRepository postRepository;
 
-    @AfterEach
+    @After
     public void tearDown() throws Exception{
         postRepository.deleteAll();
     }

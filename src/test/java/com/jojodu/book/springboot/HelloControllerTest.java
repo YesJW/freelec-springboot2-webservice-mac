@@ -1,11 +1,12 @@
 package com.jojodu.book.springboot;
 
 import com.jojodu.book.springboot.web.HelloController;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
 
@@ -13,7 +14,7 @@ import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@ExtendWith(SpringExtension.class) //SpringExtention이라는 스프링 실행자 사용, 스프링부트 테스트와 junit사이에 연결자 역할
+@RunWith(SpringRunner.class) //SpringExtention이라는 스프링 실행자 사용, 스프링부트 테스트와 junit사이에 연결자 역할
 @WebMvcTest(controllers = HelloController.class) //웹에 집중할 수 있는 어노테이션, @Controller를 사용가능
 public class HelloControllerTest {
     @Autowired //스프링이 관리하는 Bean을 주입받음
