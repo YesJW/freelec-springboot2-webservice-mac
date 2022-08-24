@@ -1,3 +1,4 @@
+/*
 package com.jojodu.book.springboot.domain;
 
 import lombok.Getter;
@@ -21,3 +22,4 @@ public abstract class BaseTimeEntity {
     @LastModifiedDate //조회한 Entity의 값을 변경할 때 자동으로 시간 저장
     private LocalDateTime modifiedDate;
 }
+*/
