@@ -41,7 +41,7 @@ deploy:
     bucket: jw-springboot-build #S3 버킷 이름
     key: freelec-springboot2-webservice.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
-    application: freelec-springboot-webservice # CodeDeploy 어플리케이션명
+    application: freelec-springboot-webservice    # CodeDeploy 어플리케이션명
     deployment_group: freelec-springboot-webservice-group # CodeDeploy 배포 그룹명
     region: ap-northeast-2
     wait-until-deployed: true
