@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk1.8
+  - openjdk8
 
 branches:
   only:
@@ -32,6 +32,8 @@ deploy:
     acl: private #zip 파일 접근 private으로
     local_dir: deploy #before_deploy에서 생성한 디렉토리
     wait_until_deployed : true
+    on:
+      all_branches: true
 
 
 # CI 실행 완료 시 메일로 알람
